@@ -1,10 +1,10 @@
 "use client";
 
+import { Suspense } from "react";
 import { AuthError } from "next-auth";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import arcii401 from "@/constants/arcii-401";
-import { signIn } from "@/lib/auth";
 import { signinAction } from "@/utils/signin";
 
 function authErrorType(err: AuthError["type"]) {
@@ -16,7 +16,7 @@ function authErrorType(err: AuthError["type"]) {
   }
 }
 
-export default function AuthErrorPage() {
+function AuthErrorComponent() {
   const router = useRouter();
   const params = useSearchParams();
 
@@ -36,5 +36,13 @@ export default function AuthErrorPage() {
         Go Home
       </button>
     </section>
+  );
+}
+
+export default function AuthErrorPage() {
+  return (
+    <Suspense>
+      <AuthErrorComponent />
+    </Suspense>
   );
 }
