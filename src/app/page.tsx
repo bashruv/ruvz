@@ -7,9 +7,9 @@ import {
   SiVelog,
 } from "@icons-pack/react-simple-icons";
 
-import { auth, signIn } from "@/lib/auth";
+import { auth } from "@/lib/auth";
 import arciiTitle from "@/constants/arcii-title";
-import { signinAction } from "@/utils/signin";
+import { signinAction } from "@/utils/login";
 
 export default async function HomePage() {
   const session = await auth();

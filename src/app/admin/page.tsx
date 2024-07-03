@@ -4,11 +4,9 @@ import { getAll } from "@/lib/kv";
 export default async function DashboardPage() {
   const data = await getAll();
 
-  console.log(data);
-
   return (
     <main>
-      <Header />
+      <Header pageName="Dashboard" />
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
