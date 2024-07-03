@@ -5,7 +5,7 @@ import { AuthError } from "next-auth";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import arcii401 from "@/constants/arcii-401";
-import { signinAction } from "@/utils/signin";
+import { signinAction } from "@/utils/login";
 
 function authErrorType(err: AuthError["type"]) {
   switch (err) {
