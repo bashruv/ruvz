@@ -19,13 +19,9 @@ export default function CreatePage() {
 
   useEffect(() => {
     if (state.complete) {
-      router.push("/admin");
+      router.push("/admin?create=ok");
     }
   }, [state.complete]);
-
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   return (
     <main>

@@ -106,3 +106,40 @@ export async function createPath(
     };
   }
 }
+
+interface RemovePathState {
+  error: boolean;
+  complete: boolean;
+}
+
+export async function removePath(
+  prevState: RemovePathState,
+  formData: FormData,
+) {
+  const path = formData.get("path") as string;
+
+  const isPathExist = await kv.get(path);
+
+  if (!isPathExist) {
+    return {
+      error: true,
+      complete: false,
+    };
+  }
+
+  try {
+    await kv.del(path);
+
+    return {
+      error: false,
+      complete: true,
+    };
+  } catch (err) {
+    console.error(err);
+
+    return {
+      error: true,
+      complete: false,
+    };
+  }
+}
