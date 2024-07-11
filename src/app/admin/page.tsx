@@ -8,7 +8,7 @@ export default async function DashboardPage() {
   return (
     <main>
       <Header pageName="Dashboard" />
-      <div className="overflow-x-auto">
+      <div className="mx-auto max-w-screen-sm overflow-x-auto">
         <table className="table table-xs">
           {/* head */}
           <thead>

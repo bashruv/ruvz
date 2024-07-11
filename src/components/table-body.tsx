@@ -33,12 +33,17 @@ export function TableBody(value: string[]) {
   return (
     <tr>
       <td>
-        <button onClick={() => cp(`https://ruvz.sh/${value[0]}`)}>
+        <button
+          onClick={() => cp(`https://ruvz.sh/${value[0]}`)}
+          className="text-left"
+        >
           {value[0]}
         </button>
       </td>
       <td>
-        <button onClick={() => cp(value[1])}>{value[1]}</button>
+        <button onClick={() => cp(value[1])} className="text-left">
+          {value[1]}
+        </button>
       </td>
       <td>
         <form action={formAction}>

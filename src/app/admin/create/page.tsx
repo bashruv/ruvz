@@ -26,7 +26,10 @@ export default function CreatePage() {
   return (
     <main>
       <Header pageName="Create" disableAddBtn />
-      <form action={formAction} className="flex flex-col gap-4 p-6">
+      <form
+        action={formAction}
+        className="mx-auto flex max-w-screen-sm flex-col gap-4 p-6"
+      >
         <label className="input input-bordered flex items-center gap-2">
           Path
           <input
